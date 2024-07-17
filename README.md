@@ -1,6 +1,7 @@
 # The Bar
 
 Membre Groupe : Pierre-Louis Sans IIM A3 (2023-2024)
+(Projet fait en solo)
 
 # .env.local
 
@@ -12,4 +13,4 @@ JWT_PASSPHRASE=eba990ca1b1bc0580e7227e2018f34b9ae82b1b380b103b1d01c5054ae82b4fd`
 
 # Exports Postman
 
-<a href="TheBar.postman_collection.json">Voir l'export postman (sans media)<a>
+<a href="TheBar.postman_collection.json">Voir l'export postman<a>

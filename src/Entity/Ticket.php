@@ -42,7 +42,7 @@ class Ticket
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups(['read', 'write'])]
+    #[Groups('read')]
     private ?\DateTimeInterface $ordered_at = null;
 
     /**

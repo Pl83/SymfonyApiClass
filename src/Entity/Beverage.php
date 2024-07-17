@@ -22,6 +22,7 @@ use ApiPlatform\Metadata\Delete;
 #[UniqueEntity('title')]
 #[ORM\Entity(repositoryClass: BeverageRepository::class)]
 #[ApiResource(
+    forceEager: false,
     operations: [
         new GetCollection(),
         new Get(),
@@ -52,6 +53,10 @@ class Beverage
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Groups(['read', 'write'])]
     private ?string $content = null;
+
+    #[ORM\OneToOne(mappedBy: 'beverage', cascade: ['persist', 'remove'])]
+    #[Groups(['read', 'write'])]
+    private ?Media $media = null;
 
     public function getId(): ?int
     {
@@ -90,6 +95,28 @@ class Beverage
     public function setContent(?string $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getMedia(): ?Media
+    {
+        return $this->media;
+    }
+
+    public function setMedia(?Media $media): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($media === null && $this->media !== null) {
+            $this->media->setBeverage(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($media !== null && $media->getBeverage() !== $this) {
+            $media->setBeverage($this);
+        }
+
+        $this->media = $media;
 
         return $this;
     }
