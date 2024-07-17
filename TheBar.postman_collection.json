@@ -336,6 +336,53 @@
 			"response": []
 		},
 		{
+			"name": "GET Ticket periode",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyNDEzNzgsImV4cCI6MTcyMTI0NDk3OCwicm9sZXMiOlsiUk9MRV9CQVJURU5ERVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJCYXJ0ZW5kZXIgMSIsImZpcnN0bmFtZSI6Ik1lbCJ9.Wz3jOmDHoa75Dnhay19WKrM5bzQ5ayENABm9kH-ZCOQWU_Wzy0XYWwO1Ev3FyJxx2WWBglc-KxK2ndsO1Y2FKUUSiKSheL9sMQocp5_YAjhqXrk3QJLPdSRxV7w1u0N3V6cTjGY6BPAuKkIxe1ZpucSupOCKTcVHI-Q1EiYL-McdMdLIw-2HvavyLYQSdEyBvSNUL0ww9Aq71tT0HM-yA9BndrVkzcvf8oS3z7qCj9-gEsyLJuARvdktHx1KBqPVzOVV1DfcT6MHknbLpF5uQFcCM4U67B5grX5Hbkxb3qV2UXmtlINEzcPbnMPxHe9mwTm_KT1Uy3gBO6N_w23EbQ"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Test\",\r\n  \"roles\": [\r\n    \"ROLE_BARTENDER\"\r\n  ],\r\n  \"plainPassword\": \"password\",\r\n  \"firstname\": \"dfs\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{symfonyApiBase}}/tickets?ordered_at[strictly_before]=2024-07-17 18:12:00",
+					"host": [
+						"{{symfonyApiBase}}"
+					],
+					"path": [
+						"tickets"
+					],
+					"query": [
+						{
+							"key": "ordered_at[strictly_before]",
+							"value": "2024-07-17 18:12:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "POST Ticket",
 			"request": {
 				"auth": {
