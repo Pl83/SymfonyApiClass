@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "ca7ca6ea-ee57-4bc3-a4f7-7e9099a3a064",
+		"name": "TheBar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24534115"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Bartender 1\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/auth"
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Beverage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{symfonyApiBase}}/beverages"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Beverage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{symfonyApiBase}}/beverages/1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Beverage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMjAxNzksImV4cCI6MTcyMTIyMzc3OSwicm9sZXMiOlsiUk9MRV9CQVJURU5ERVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJCYXJ0ZW5kZXIgMSIsImZpcnN0bmFtZSI6Ik1lbCJ9.CYk9zbENApAGILeSZ-YzZFBibRTsa96r_w30haCJ9fyIUSfETkLfrxkGoCZb8VdpR8wXa_HhOsmcl9rQQeFWRi4UDRdG7D_apqVkbtpV2Q8OciBu8zJVJGxiHkVR4ZxUovVZaAUfBkQtMANVUVqxlOKLCt0scddzW1vIo0-QBdzrknUKBfEdCN7N_YDzBh4MwiTGVofDqCkSy7Z0RJAlyJTEmipII4mJa2qhBtdmL8D_73iNZjEgxrywI8H8ff7uHxxoOXm-SmgmIGyNsLirdVkIh0kKm4d-X50vG8r3YKg105ISAzl5bChh3xqFB3EcODWI4_s66-1x2Bnb5JMjUQ"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"testing\",\r\n  \"price\": 9.43,\r\n  \"content\": \"yeah\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/beverages"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Beverage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMjAxNzksImV4cCI6MTcyMTIyMzc3OSwicm9sZXMiOlsiUk9MRV9CQVJURU5ERVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJCYXJ0ZW5kZXIgMSIsImZpcnN0bmFtZSI6Ik1lbCJ9.CYk9zbENApAGILeSZ-YzZFBibRTsa96r_w30haCJ9fyIUSfETkLfrxkGoCZb8VdpR8wXa_HhOsmcl9rQQeFWRi4UDRdG7D_apqVkbtpV2Q8OciBu8zJVJGxiHkVR4ZxUovVZaAUfBkQtMANVUVqxlOKLCt0scddzW1vIo0-QBdzrknUKBfEdCN7N_YDzBh4MwiTGVofDqCkSy7Z0RJAlyJTEmipII4mJa2qhBtdmL8D_73iNZjEgxrywI8H8ff7uHxxoOXm-SmgmIGyNsLirdVkIh0kKm4d-X50vG8r3YKg105ISAzl5bChh3xqFB3EcODWI4_s66-1x2Bnb5JMjUQ"
+					}
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/merge-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"testing\",\r\n  \"price\": 5,\r\n  \"content\": \"yeah\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/beverages/4"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Beverage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMjAxNzksImV4cCI6MTcyMTIyMzc3OSwicm9sZXMiOlsiUk9MRV9CQVJURU5ERVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJCYXJ0ZW5kZXIgMSIsImZpcnN0bmFtZSI6Ik1lbCJ9.CYk9zbENApAGILeSZ-YzZFBibRTsa96r_w30haCJ9fyIUSfETkLfrxkGoCZb8VdpR8wXa_HhOsmcl9rQQeFWRi4UDRdG7D_apqVkbtpV2Q8OciBu8zJVJGxiHkVR4ZxUovVZaAUfBkQtMANVUVqxlOKLCt0scddzW1vIo0-QBdzrknUKBfEdCN7N_YDzBh4MwiTGVofDqCkSy7Z0RJAlyJTEmipII4mJa2qhBtdmL8D_73iNZjEgxrywI8H8ff7uHxxoOXm-SmgmIGyNsLirdVkIh0kKm4d-X50vG8r3YKg105ISAzl5bChh3xqFB3EcODWI4_s66-1x2Bnb5JMjUQ"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{symfonyApiBase}}/beverages/4"
+			},
+			"response": []
+		},
+		{
+			"name": "GET All User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzQ0MjcsImV4cCI6MTcyMTIzODAyNywicm9sZXMiOlsiUk9MRV9CT1NTIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiQm9zcyIsImZpcnN0bmFtZSI6InBsIn0.IAcw_UkMlunZ0mT1QJ20FQVKoHFE-zoeYRllxt7T-EcV7SDN-s6Gm6QKt7r6g1nrwd0gm0GYvKgk4KoBSVOw_TQMQ5tj_0a3XPH6KOy2CVUFYQoQ8Gbb54dc4zE2OBIIUxW4zXAyghqiSN7AdCedGjtw-kqhat-PpC22_HWBYYcKM3ON00P53GRifips40bpd9wPeSXec2yjJLYwoSp6NQ9GqqIZTmK0g6e56n3EeW1Sq8gXJcxhzhtsOPlr-5Kz0XzeH4qVUca_X3i5V6r3SNB-EKnAzNQCl_1C6FmTf_xAlHPUkjMVqSRpQEHFOyw9q0v13e58eMlZsYOuvFNqAQ"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{symfonyApiBase}}/users"
+			},
+			"response": []
+		},
+		{
+			"name": "GET User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzQ0MjcsImV4cCI6MTcyMTIzODAyNywicm9sZXMiOlsiUk9MRV9CT1NTIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiQm9zcyIsImZpcnN0bmFtZSI6InBsIn0.IAcw_UkMlunZ0mT1QJ20FQVKoHFE-zoeYRllxt7T-EcV7SDN-s6Gm6QKt7r6g1nrwd0gm0GYvKgk4KoBSVOw_TQMQ5tj_0a3XPH6KOy2CVUFYQoQ8Gbb54dc4zE2OBIIUxW4zXAyghqiSN7AdCedGjtw-kqhat-PpC22_HWBYYcKM3ON00P53GRifips40bpd9wPeSXec2yjJLYwoSp6NQ9GqqIZTmK0g6e56n3EeW1Sq8gXJcxhzhtsOPlr-5Kz0XzeH4qVUca_X3i5V6r3SNB-EKnAzNQCl_1C6FmTf_xAlHPUkjMVqSRpQEHFOyw9q0v13e58eMlZsYOuvFNqAQ"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{symfonyApiBase}}/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzQ0MjcsImV4cCI6MTcyMTIzODAyNywicm9sZXMiOlsiUk9MRV9CT1NTIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiQm9zcyIsImZpcnN0bmFtZSI6InBsIn0.IAcw_UkMlunZ0mT1QJ20FQVKoHFE-zoeYRllxt7T-EcV7SDN-s6Gm6QKt7r6g1nrwd0gm0GYvKgk4KoBSVOw_TQMQ5tj_0a3XPH6KOy2CVUFYQoQ8Gbb54dc4zE2OBIIUxW4zXAyghqiSN7AdCedGjtw-kqhat-PpC22_HWBYYcKM3ON00P53GRifips40bpd9wPeSXec2yjJLYwoSp6NQ9GqqIZTmK0g6e56n3EeW1Sq8gXJcxhzhtsOPlr-5Kz0XzeH4qVUca_X3i5V6r3SNB-EKnAzNQCl_1C6FmTf_xAlHPUkjMVqSRpQEHFOyw9q0v13e58eMlZsYOuvFNqAQ"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Test\",\r\n  \"roles\": [\r\n    \"ROLE_BARTENDER\"\r\n  ],\r\n  \"plainPassword\": \"password\",\r\n  \"firstname\": \"dfs\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/users"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzQ0MjcsImV4cCI6MTcyMTIzODAyNywicm9sZXMiOlsiUk9MRV9CT1NTIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiQm9zcyIsImZpcnN0bmFtZSI6InBsIn0.IAcw_UkMlunZ0mT1QJ20FQVKoHFE-zoeYRllxt7T-EcV7SDN-s6Gm6QKt7r6g1nrwd0gm0GYvKgk4KoBSVOw_TQMQ5tj_0a3XPH6KOy2CVUFYQoQ8Gbb54dc4zE2OBIIUxW4zXAyghqiSN7AdCedGjtw-kqhat-PpC22_HWBYYcKM3ON00P53GRifips40bpd9wPeSXec2yjJLYwoSp6NQ9GqqIZTmK0g6e56n3EeW1Sq8gXJcxhzhtsOPlr-5Kz0XzeH4qVUca_X3i5V6r3SNB-EKnAzNQCl_1C6FmTf_xAlHPUkjMVqSRpQEHFOyw9q0v13e58eMlZsYOuvFNqAQ"
+					}
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/merge-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"Helo\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/users/3"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzQ0MjcsImV4cCI6MTcyMTIzODAyNywicm9sZXMiOlsiUk9MRV9CT1NTIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiQm9zcyIsImZpcnN0bmFtZSI6InBsIn0.IAcw_UkMlunZ0mT1QJ20FQVKoHFE-zoeYRllxt7T-EcV7SDN-s6Gm6QKt7r6g1nrwd0gm0GYvKgk4KoBSVOw_TQMQ5tj_0a3XPH6KOy2CVUFYQoQ8Gbb54dc4zE2OBIIUxW4zXAyghqiSN7AdCedGjtw-kqhat-PpC22_HWBYYcKM3ON00P53GRifips40bpd9wPeSXec2yjJLYwoSp6NQ9GqqIZTmK0g6e56n3EeW1Sq8gXJcxhzhtsOPlr-5Kz0XzeH4qVUca_X3i5V6r3SNB-EKnAzNQCl_1C6FmTf_xAlHPUkjMVqSRpQEHFOyw9q0v13e58eMlZsYOuvFNqAQ"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{symfonyApiBase}}/users/5"
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Ticket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzk0NDQsImV4cCI6MTcyMTI0MzA0NCwicm9sZXMiOlsiUk9MRV9XQUlURVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJXYWl0ZXIgMSIsImZpcnN0bmFtZSI6IkhlbG8ifQ.mzA7blT8eKCWsWYjhTttHpqyJDj01Gxk6gA-eoZTOfPY_QvMNNFM29pwtuXkoKkAulXnE0KB3122VP70WIQ0k_P0jCF5IkvT7HqYh_AtS1thofGiTs27HYKbL8S7BV3q9MzCOHG72FHSg2w-HvkKYuuL4bRZ6yf97qClNqnUF4yEHuiuLTZcuulrgWaUgUX0wI5UKSnc72HDEiyKng0WU4vAJzRR--kHGsMV7YiNHIuV2cf_o6umrxV0FW1X7j2G92mlUtoY5lZfGJDcok2o697-n8QYUMYLlloxaIRVDWF5_7x0-ZYz-6Bp9tt99HbvIwvyf1IlPsBrELUV7Gcj5Q"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Test\",\r\n  \"roles\": [\r\n    \"ROLE_BARTENDER\"\r\n  ],\r\n  \"plainPassword\": \"password\",\r\n  \"firstname\": \"dfs\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/tickets"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ticket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzQ0MjcsImV4cCI6MTcyMTIzODAyNywicm9sZXMiOlsiUk9MRV9CT1NTIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiQm9zcyIsImZpcnN0bmFtZSI6InBsIn0.IAcw_UkMlunZ0mT1QJ20FQVKoHFE-zoeYRllxt7T-EcV7SDN-s6Gm6QKt7r6g1nrwd0gm0GYvKgk4KoBSVOw_TQMQ5tj_0a3XPH6KOy2CVUFYQoQ8Gbb54dc4zE2OBIIUxW4zXAyghqiSN7AdCedGjtw-kqhat-PpC22_HWBYYcKM3ON00P53GRifips40bpd9wPeSXec2yjJLYwoSp6NQ9GqqIZTmK0g6e56n3EeW1Sq8gXJcxhzhtsOPlr-5Kz0XzeH4qVUca_X3i5V6r3SNB-EKnAzNQCl_1C6FmTf_xAlHPUkjMVqSRpQEHFOyw9q0v13e58eMlZsYOuvFNqAQ"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Test\",\r\n  \"roles\": [\r\n    \"ROLE_BARTENDER\"\r\n  ],\r\n  \"plainPassword\": \"password\",\r\n  \"firstname\": \"dfs\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/tickets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyMzk3NzEsImV4cCI6MTcyMTI0MzM3MSwicm9sZXMiOlsiUk9MRV9XQUlURVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJXYWl0ZXIgMSIsImZpcnN0bmFtZSI6IkhlbG8ifQ.LcxlRCJSIg2rwZzGFgOw3z7Zu9OQoswkbi_gfdE5H7BU-D_LLCOELuTL-J9RGYpV1O9SrXowLGAGb6oH_35go2bKCG1d8l44nfXfuWeDXI6ux6x_c7awucfB-RyBdcwSP6gdyjQNKkM7JFFviNXyA_wYKsI8ZeWloXkOF76HZd0i-T8QIUAlTLWoGjmeeHp7E-5EaUkuN4Hg6UG8-rL15a_1Psschmyn_zNTXDYiinDVXt2fjpR4GwyLZ49APXctxyMHugqmYXELUCCXAgQaleueYWBscB9TPTaAydq394wMr30w5DszKtPs9lx39Z-1kTRFnBJOltmiua5u7zFkIA"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"drinks\": [\r\n    \"/api/beverages/3\"\r\n  ],\r\n  \"table_nb\": 51,\r\n  \"waiter\": \"/api/users/3\",\r\n  \"status\": \"paid\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/tickets"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEyNDAwMzQsImV4cCI6MTcyMTI0MzYzNCwicm9sZXMiOlsiUk9MRV9CQVJURU5ERVIiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJCYXJ0ZW5kZXIgMSIsImZpcnN0bmFtZSI6Ik1lbCJ9.IDk-RS1H4rQXiRh2ayT8ezY9tkDviooOKyaN3OJU6b914KsbMPG1-eyjH62d93XK5dYhX6hq-6AD1dmKhEUfsJl3RLMILVUKwshb-nQVZ9liRiJjrsjSJAJHDIE5P2UsPYZcWCmzZ0qWtwzdIXonbYERq3E9yfeA5ZHs1HslsV49ur7bW01cUhcuXjUxrkj0ZEuo75BpCGvCfV8BRUZL7W9yyC291QRNJBJErAO98szrK9OQWbXbQ96vZHy_UIpq2QdfsDvbsMTb6eF7lsN7dzZTbP39K66t-sSV3pHB3-mMgFgIvGpJIxYCJudt2WVpmrQIuMneR-B5OjkVz9ScWA"
+					}
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/merge-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bartender\": \"/api/users/2\"\r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{symfonyApiBase}}/tickets/3"
+			},
+			"response": []
+		}
+	]
+}
